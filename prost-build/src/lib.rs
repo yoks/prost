@@ -677,12 +677,12 @@ where
 
 /// Returns the path to the `protoc` binary.
 pub fn protoc() -> &'static Path {
-    Path::new(env!("PROTOC"))
+    Path::new("$(pwd)/bazel-out/host/bin/external/com_google_protobuf/protoc")
 }
 
 /// Returns the path to the Protobuf include directory.
 pub fn protoc_include() -> &'static Path {
-    Path::new(env!("PROTOC_INCLUDE"))
+    Path::new("$(pwd)")
 }
 
 #[cfg(test)]
